@@ -6,9 +6,7 @@ import com.logistic.api.model.person.FullName;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Denis on 5/25/2015.
- */
+
 public interface Package {
     public String getPackageId();                  // get package Id
     public int getWeight();                        // get weight package

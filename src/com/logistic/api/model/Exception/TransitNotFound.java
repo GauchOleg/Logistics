@@ -1,7 +1,5 @@
 package com.logistic.api.model.Exception;
 
-/**
- * Created by Acer on 06.11.2015.
- */
-public class TransitNotFound {
+
+public class TransitNotFound extends RuntimeException { // class for catch exception run time (The transit not found)
 }

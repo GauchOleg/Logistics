@@ -1,7 +1,4 @@
 package com.logistic.api.model.Exception;
 
-/**
- * Created by Acer on 06.11.2015.
- */
-public class PackageNotFound {
+public class PackageNotFound extends RuntimeException{ // class for catch exception run time (The package not found)
 }

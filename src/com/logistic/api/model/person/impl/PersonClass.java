@@ -1,60 +1,24 @@
 package com.logistic.api.model.person.impl;
 
-import com.logistic.api.model.person.Address;
-import com.logistic.api.model.person.FullName;
-import com.logistic.api.model.person.Person;
+/**
+ * Created by Oleg on 07.11.2015.
+ */
+public class PersonClass implements com.logistic.api.model.person.Person {
+    private AddressClass address;
+    private FullNameClass fullName;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public abstract class PersonClass implements Person, FullName {
-    private Address address;
-    private String firstName;
-    private String lastName;
-    private String middleName;
-
-
-//    public PersonClass() {
-//        super();
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return super.hashCode();
-//    }
-
-    @Override
-    public String getFirstName() {
-        return this.firstName;
+    public PersonClass(AddressClass address, FullNameClass fullName){
+        this.address = address;
+        this.fullName = fullName;
     }
 
     @Override
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    @Override
-    public String getMiddleName() {
-        return this.middleName;
-    }
-
-    @Override
-    public Address getAddress() {
+    public com.logistic.api.model.person.Address getAddress() {
         return this.address;
     }
 
     @Override
-    public FullName getFullName() {
-        return this;
+    public com.logistic.api.model.person.FullName getFullName() {
+        return this.fullName;
     }
-
-    @Override
-    public String toString() {
-        return "Person [" + firstName + " " + lastName + " " + middleName + "]" + address;
-    }
-
-
-    public PersonClass (String firstName, )
 }
-
-

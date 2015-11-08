@@ -1,25 +1,30 @@
 package com.logistic.api.model.transport.impl;
-
 import com.logistic.api.model.post.PostOffice;
 import com.logistic.api.model.transport.Transit;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Oleg on 03.11.2015.
+ * Created by Oleg on 08.11.2015.
  */
-public abstract class TransitClass implements Transit {
-    Transit transit = new Transit() {
-        @Override
-        public List<PostOffice> getTransitOffices() {
-            return this.getTransitOffices();
-        }
+public class TransitClass implements Transit {
+    private List<PostOffice> Office;
+    private double price;
 
-        @Override
-        public double getPrice() {
-            return this.getPrice();
-        }
-    };
-    List postOffise = transit.getTransitOffices();
-    double getPrice = transit.getPrice();
+    public TransitClass (List<PostOffice> Office, double price){
+        this.Office = Collections.unmodifiableList(new ArrayList(Office));
+        this.price = price;
+    }
+
+    @Override
+    public List<PostOffice> getTransitOffices() {
+        return this.Office;
+    }
+
+    @Override
+    public double getPrice() {
+        return this.price;
+    }
 }

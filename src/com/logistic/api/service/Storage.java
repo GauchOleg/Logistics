@@ -13,8 +13,7 @@ public class Storage {                                                          
         private static final Storage instance = new Storage();                         // grete new instance storage
     }
 
-    public static Storage getInstance() {
-        return InstanceHolder.instance;
+    public static Storage getInstance() {return InstanceHolder.instance;
     }            // get instance storage
 
     private Storage() {

@@ -1,7 +1,5 @@
 package com.logistic.api.model.transport;
-
 import com.logistic.api.model.post.PostOffice;
-
 import java.util.List;
 
 /**
