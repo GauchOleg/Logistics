@@ -1,6 +1,6 @@
 package com.logistic.api.model.person.impl;
 
-import com.sun.xml.internal.ws.server.ServerRtException;
+
 
 /**
  * Created by Oleg on 07.11.2015.

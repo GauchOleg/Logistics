@@ -2,11 +2,14 @@ package com.logistic.api.service.impl;
 import com.logistic.api.model.person.impl.AddressClass;
 import com.logistic.api.model.post.Package;
 import com.logistic.api.model.post.PostOffice;
+import com.logistic.api.model.post.impl.PackageClass;
 import com.logistic.api.model.post.impl.PostOfficeClass;
 import com.logistic.api.model.transport.DeliveryTransport;
+import com.logistic.api.model.transport.Transit;
 import com.logistic.api.model.transport.impl.DeleveryTransportClass;
 import com.logistic.api.model.transport.impl.TransitClass;
 import com.logistic.api.service.Storage;
+import com.sun.xml.internal.ws.server.ServerRtException;
 
 
 import java.awt.*;
@@ -521,5 +524,22 @@ public class StorageHelper {
 
     public static List getAllOffices(){
         return Storage.getInstance().<List>getById(POST_OFFICE);
+    }
+
+    public static List<TransitClass> getTransits (){
+        return Storage.getInstance().<List>getById(AVAILABLE_TRANSIT);
+    }
+
+    public static PackageClass getPackage (String id){
+        return Storage.getInstance().<PackageClass>getById(id);
+    }
+    public static TransitClass getTransits (String id){
+        return Storage.getInstance().<TransitClass>getById(id + TRANSIT);
+    }
+
+    public static AddressClass getRandomAddress (){
+        Random random = new Random();
+        List<AddressClass> address = Storage.getInstance().<List>getById(ADDRESSES);
+        return address.get(random.nextInt(address.size()));
     }
 }

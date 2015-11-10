@@ -1,5 +1,6 @@
 package com.logistic.api.model.transport.impl;
 import com.logistic.api.model.post.PostOffice;
+import com.logistic.api.model.post.impl.PostOfficeClass;
 import com.logistic.api.model.transport.Transit;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class TransitClass implements Transit {
     private List<PostOffice> Office;
     private double price;
 
-    public TransitClass (List<PostOffice> Office, double price){
+    public TransitClass (List<PostOfficeClass> Office, double price){
         this.Office = Collections.unmodifiableList(new ArrayList(Office));
         this.price = price;
     }
